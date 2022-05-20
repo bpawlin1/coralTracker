@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1>{{ coral.name }}</h1>
+</article>
+<p>
+    <a href="{% url 'coralUpdate' coral.pk %}">✍️ Edit</a>
+    <a href="{% url 'coralDelete' coral.pk %}">⛔ Delete</a>
+</p>
+<div class="row">
+    <div class="col-md-8">
+        <img src="{{coral.image.url}}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+        <h5>About the coral:</h5>
+        <p>{{ coral.description }}</p>
+        <br>
+        <h5>Purchase Date:</h5>
+        <p>{{ coral.purchaseDate }}</p>
+    </div>
+</div>
+{% endblock %}

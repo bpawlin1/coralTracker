@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+
+
+<h1>Corals</h1>
+
+<button type="button" class="btn btn-primary"> 
+    <a href="newCoral" style="color:inherit" > Add Coral </a>
+  </button>
+
+<div class="row">
+       
+{% for coral in corals %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{{coral.image.url}}">
+            <div class="card-body">
+                <h5 class="card-title">{{ coral.name }}</h5>
+                <p class="card-text">{{ coral.description }}</p>
+                <a href="{% url 'coral_detail' coral.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
