@@ -9,13 +9,13 @@
 <button type="button" class="btn btn-primary"> 
     <a href="newCoral" style="color:inherit" > Add Coral </a>
   </button>
-
+  
 <div class="row">
        
 {% for coral in corals %}
     <div class="col-md-4">
         <div class="card mb-2">
-            <img class="card-img-top" src="{{coral.image.url}}">
+            <img class="card-img-top" src="{{ MEDIA_URL }}{{coral.image.url}}">
             <div class="card-body">
                 <h5 class="card-title">{{ coral.name }}</h5>
                 <p class="card-text">{{ coral.description }}</p>

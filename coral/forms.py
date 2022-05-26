@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, Select
 from .models import Coral
 
 class DateInput(forms.DateInput):
@@ -7,12 +7,11 @@ class DateInput(forms.DateInput):
         
 class CoralForm(forms.ModelForm):
 
-    
-
     class Meta:
         model = Coral
         fields = ["name", "description", "status" , "source", "purchaseDate","purchaseCost","image"]
         widgets = {
             'purchaseDate': DateInput(),
+            'status': Select(),
         }
 
