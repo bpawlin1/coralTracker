@@ -15,5 +15,9 @@ class Coral(models.Model):
     purchaseCost = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='upload/',null=True, blank=True)
     date_created = models.DateTimeField(default=timezone.now)
+ #   user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     
-   
+#class User(models.Model):
+#    first_name = models.CharField(max_length=100)
+#    last_name = models.CharField(max_length=100)
+    
